@@ -1,0 +1,17 @@
+<h1>Edit Person</h1>
+
+<%= form_with(model: @person, url: person_path(@person), method: :patch) do |form| %>
+  <div>
+    <%= form.label :name %>
+    <%= form.text_field :name %>
+  </div>
+
+  <div>
+    <%= form.label :email %>
+    <%= form.email_field :email %>
+  </div>
+
+  <div>
+    <%= form.submit "Update Person" %>
+  </div>
+<% end %>

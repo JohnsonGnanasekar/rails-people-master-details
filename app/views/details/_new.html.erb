@@ -1,0 +1,19 @@
+<turbo-frame id="details">
+<h1>New Detail for <%= @person.name %></h1>
+
+<%= form_with(model: [@person, @detail], url: person_details_path(@person), method: :post) do |form| %>
+  <div>
+    <%= form.label :detail_type %>
+    <%= form.text_field :detail_type %>
+  </div>
+
+  <div>
+    <%= form.label :detail_value %>
+    <%= form.text_field :detail_value %>
+  </div>
+
+  <div>
+    <%= form.submit "Create Detail" %>
+  </div>
+<% end %>
+</turbo-frame>

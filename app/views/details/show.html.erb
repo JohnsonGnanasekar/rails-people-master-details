@@ -1,0 +1,6 @@
+<h1><%= @detail.detail_type %></h1>
+
+<p><strong>Value:</strong> <%= @detail.detail_value %></p>
+
+<%= link_to "Edit", edit_person_detail_path(@person, @detail) %> |
+<%= link_to "Back", person_details_path(@person) %>

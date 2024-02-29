@@ -1,0 +1,24 @@
+<div class="row">
+  <div class="left-panel col-md-6">
+    <!-- Left panel content goes here -->
+    <h1>People</h1>
+    <ul>
+      <% @people.each do |person| %>
+        <li>
+          <%= link_to person.name, person_details_path(person), class: "person-link", "data-turbo-frame": "details" %>
+          (<%= person.email %>)
+          <%= link_to "Edit", edit_person_path(person), class: "btn btn-primary btn-sm" %>
+          <%= link_to "Delete", person_path(person), data: { turbo_method: :delete }, class: "btn btn-danger btn-sm" %>
+        </li>
+      <% end %>
+    </ul>
+    <%= link_to "New Person", new_person_path %>
+  </div>
+
+  <div class="right-panel col-md-6">
+    <!-- Right panel content (details) will be loaded here dynamically -->
+    <%= turbo_frame_tag 'details' do %>
+      <!-- Details will be loaded here dynamically -->
+    <% end %>
+  </div>
+</div>

@@ -1,0 +1,17 @@
+<turbo-frame id="details">
+<h1>Details</h1>
+
+<ul>
+  <li> Name: <%= @person.name %></li>
+  <li> Email: <%= @person.email %></li>
+  <% @details.each do |detail| %>
+    <li>
+      <%= detail.detail_type %>: <%= detail.detail_value %>
+      <%= link_to "Edit", edit_person_detail_path(@person, detail), class: "btn btn-primary btn-sm", "data-turbo-frame": "details" %>
+      <%= link_to "Delete", person_detail_path(@person, detail), data: { turbo_method: :delete }, class: "btn btn-danger btn-sm" %>
+    </li>
+<% end %>
+</ul>
+
+  <%= link_to "New Detail", new_person_detail_path(@person), class: "person-link", "data-turbo-frame": "details" %>
+</turbo-frame>

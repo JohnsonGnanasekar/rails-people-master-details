@@ -1,0 +1,16 @@
+/* Style for people list */
+.people-list {
+    list-style: none;
+    padding: 0;
+}
+
+.people-list li {
+    margin-bottom: 10px;
+}
+
+/* Style for details frame */
+#details-frame {
+    border: 1px solid #ccc;
+    padding: 10px;
+    min-height: 200px;
+}

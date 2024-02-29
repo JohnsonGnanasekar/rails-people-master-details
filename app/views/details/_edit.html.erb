@@ -1,0 +1,19 @@
+<turbo-frame id="details">
+<h1>Edit Detail for <%= @person.name %></h1>
+
+<%= form_with(model: [@person, @detail], url: person_detail_path(@person, @detail), method: :patch) do |form| %>
+  <div>
+    <%= form.label :detail_type %>
+    <%= form.text_field :detail_type %>
+  </div>
+
+  <div>
+    <%= form.label :detail_value %>
+    <%= form.text_field :detail_value %>
+  </div>
+
+  <div>
+    <%= form.submit "Update Detail" %>
+  </div>
+<% end %>
+</turbo-frame>

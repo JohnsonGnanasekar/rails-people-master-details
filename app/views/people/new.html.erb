@@ -1,0 +1,17 @@
+<h1>New Person</h1>
+
+<%= form_with(model: @person, url: people_path, method: :post) do |form| %>
+  <div>
+    <%= form.label :name %>
+    <%= form.text_field :name %>
+  </div>
+
+  <div>
+    <%= form.label :email %>
+    <%= form.email_field :email %>
+  </div>
+
+  <div>
+    <%= form.submit "Create Person" %>
+  </div>
+<% end %>
